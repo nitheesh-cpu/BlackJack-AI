@@ -1,0 +1,134 @@
+{% block content %}
+<html>
+
+<head>
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- import tailwind css cdn -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+        $(document).ready(function () {
+            $("#image_upload").change(function () {
+                var file = this.files[0];
+                var reader = new FileReader();
+                // scale image to width 615px
+                reader.onloadend = function () {
+                    var tempImg = new Image();
+                    tempImg.src = reader.result;
+                    tempImg.onload = function () {
+                        var MAX_WIDTH = 615;
+                        var MAX_HEIGHT = 615;
+                        var tempW = tempImg.width;
+                        var tempH = tempImg.height;
+                        if (tempW > tempH) {
+                            if (tempW > MAX_WIDTH) {
+                                tempH *= MAX_WIDTH / tempW;
+                                tempW = MAX_WIDTH;
+                            }
+                        } else {
+                            if (tempH > MAX_HEIGHT) {
+                                tempW *= MAX_HEIGHT / tempH;
+                                tempH = MAX_HEIGHT;
+                            }
+                        }
+                        var canvas = document.createElement('canvas');
+                        canvas.width = tempW;
+                        canvas.height = tempH;
+                        var ctx = canvas.getContext("2d");
+                        ctx.drawImage(this, 0, 0, tempW, tempH);
+                        var dataURL = canvas.toDataURL("image/jpeg");
+                        $("#image_output").css("background", "black url(" + dataURL + ") center center no-repeat");
+                        $("#image_output").css("display", "block");
+                    }
+                }
+                reader.readAsDataURL(file);
+
+
+                // show image
+
+
+                // reader.onloadend = function () {
+                //     $("#image_output").css("background-image", "url(" + reader.result + ")");
+                // }
+            });
+            // when analyze button is clicked
+            $("button").click(function () {
+                // get image data
+                var img = $("#image_output").css("background-image");
+                img = img.replace(/"/g, "");
+                img = img.replace(/url\(|\)$/ig, "");
+                // send image data to server
+                $.ajax({
+                    type: "POST",
+                    url: "/upload",
+                    data: {
+                        image: img
+                    }
+                }).done(function (o) {
+                    console.log('saved');
+                    file_url = o;
+                    console.log("\'" + file_url['image_url'] + "\'");
+                    // redirect to result page
+                    // window.location.href = "/result";
+                    // show result
+
+                    image_url = "/image?image_url=" + file_url['image_url']
+
+                    // remove image 
+                    $("#image_output").css("background", "black url(" + image_url + ") center center no-repeat");
+
+                });
+            });
+        });
+    </script>
+
+</head>
+
+<body class="body bg-white dark:bg-[#0F172A]">
+    <div
+        class="bg-black before:animate-pulse before:bg-gradient-to-b before:from-gray-900 overflow-hidden before:via-[#00FF00] before:to-gray-900 before:absolute ">
+        <div id="myDIV">
+            <div class="w-[100vw] h-[100vh] px-3 sm:px-5 flex items-center justify-center absolute">
+                <div
+                    class="w-full sm:w-1/2 lg:2/3 px-6 bg-gray-500 bg-opacity-20 bg-clip-padding backdrop-filter backdrop-blur-sm text-white z-50 py-4  rounded-lg">
+                    <div class="w-full flex justify-center text-[#00FF00] text-xl mb:2 md:mb-5">
+                        Blackjack AI
+                    </div>
+                    <div class="mb-6">
+                        <label for="image_upload" class="block mb-2 text-xs font-medium text-white">Upload Image</label>
+                        <input
+                            class="block w-full text-lg text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            id="image_upload" type="file">
+                        <div id="image_output"
+                            style="background-color: black; height: 615px; width:615px; margin-top:20px; display: none;">
+
+                        </div>
+                    </div>
+
+                    <button type="submit"
+                        class="mt-4 md:mt-5 w-full flex justify-center text-sm md:text-xl text-black bg-[#00FF00] py-2 rounded-md">
+                        Analyze
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script>
+    const para = document.createElement("div");
+    para.className = 'flex flex-wrap gap-0.5 h-screen items-center justify-center  relative';
+    let el = '<div class = "  transition-colors duration-[1.5s] hover:duration-[0s] border-[#00FF00] h-[calc(5vw-2px)] w-[calc(5vw-2px)] md:h-[calc(4vw-2px)] md:w-[calc(4vw-2px)] lg:h-[calc(3vw-4px)] lg:w-[calc(3vw-4px)] bg-gray-900 hover:bg-[#00FF00]"></div>'
+    for (var k = 1; k <= 1000; k++) {
+        el += '<div class = " transition-colors duration-[1.5s] hover:duration-[0s] border-[#00FF00] h-[calc(5vw-2px)] w-[calc(5vw-2px)] md:h-[calc(4vw-2px)] md:w-[calc(4vw-2px)] lg:h-[calc(3vw-4px)] lg:w-[calc(3vw-4px)] bg-gray-900 hover:bg-[#00FF00]"></div>';
+    };
+
+    para.innerHTML = el;
+    document.getElementById("myDIV").appendChild(para);
+</script>
+
+</html>
+
+{% endblock content %}
