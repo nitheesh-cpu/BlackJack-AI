@@ -3,3 +3,4 @@ psutil
 ultralytics
 pillow
 opencv-python-headless
+py4web

@@ -10,6 +10,7 @@ from flask import send_file
 from flask import jsonify
 from flask import json
 
+from py4web.core import wsgi
 
 from PIL import Image
 from PIL import ImageDraw
