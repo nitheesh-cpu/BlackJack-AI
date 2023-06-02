@@ -19,7 +19,7 @@ import base64
 
 import uuid
 
-model = YOLO(r"model.pt")
+model = YOLO("https://nitheesh.software/file/model.pt")
 # model.predict(source="2", show=True, conf=0.2)
 
 # Q: How do I see the x and y coordinates of the bounding boxes?
