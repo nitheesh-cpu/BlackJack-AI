@@ -1,9 +1,12 @@
+import shutil
+import os
+import base64
+import uuid
+import csv
+
 import flask
 from ultralytics import YOLO
 from ultralytics.yolo.v8.detect.predict import DetectionPredictor
-
-import shutil
-import os
 
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 from flask import send_file
@@ -16,11 +19,10 @@ from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
 
-import base64
 
-import uuid
 
-model = YOLO("https://nitheesh.software/file/model.pt")
+
+model = YOLO("model.pt")
 # model.predict(source="2", show=True, conf=0.2)
 
 # Q: How do I see the x and y coordinates of the bounding boxes?
@@ -100,52 +102,76 @@ def predict(image):
         decision = "Blackjack!"
         percent = 100
 
-    if('A' in player_hand):
-        if(player_value >= 19):
-            decision = "Stand"
-            percent = 100
-        elif(player_value == 18 and dealer_value < 9):
-            decision = "Stand"
-            percent = 100
-        elif(player_value == 18 and dealer_value >= 9):
-            decision = "Hit"
-            percent = 100
-        else:
-            decision = "Hit"
-            percent = 100
+    # check strategy.csv for decision
+    # if player has an ace, check if it's soft or hard
 
-    else:
-        if(player_value > 11 and player_value < 17 and dealer_value >= 10):
-            # determine percentage of next card not busting
-            percent = 0
-            for card in deck:
-                if player_value + card_value(card) <= 21:
-                    percent += 1
-            percent = percent / len(deck) * 100
-            percent = round(percent)
-            if percent > 50:
-                decision = "Hit"
-            else:
-                decision = "Stand"
-                percent = 100 - percent
+    hard = False
+    for card in player_hand:
+            if card == 'A':
+                hard = False
+    
+    # open csv file
+
+    with open('strategy.csv') as csvfile:
+        reader = csv.reader(csvfile, delimiter=',')
+
+        # find the row that matches the player's hand
+        for row in reader:
+            if row[0] == str(player_value) and row[1] == str(dealer_value) and row[2].lower() == str(hard).lower():
+                decision = row[3]
+                percent = 100
+                break
+
+    # if('A' in player_hand):
+    #     if(player_value >= 19):
+    #         decision = "Stand"
+    #         percent = 100
+    #     elif(player_value == 18 and dealer_value < 9):
+    #         decision = "Stand"
+    #         percent = 100
+    #     elif(player_value == 18 and dealer_value >= 9):
+    #         decision = "Hit"
+    #         percent = 100
+    #     else:
+    #         decision = "Hit"
+    #         percent = 100
+
+    # else:
+    #     if(player_value > 11 and player_value < 17 and dealer_value >= 10):
+    #         # determine percentage of next card not busting
+    #         percent = 0
+    #         for card in deck:
+    #             if player_value + card_value(card) <= 21:
+    #                 percent += 1
+    #         percent = percent / len(deck) * 100
+    #         percent = round(percent)
+    #         if percent > 50:
+    #             decision = "Hit"
+    #         else:
+    #             decision = "Stand"
+    #             percent = 100 - percent
         
-        if(player_value >= 17):
-            decision = "Stand"
-            percent = 100
+    #     if(player_value >= 17):
+    #         decision = "Stand"
+    #         percent = 100
 
-        if(player_value <= 11):
-            decision = "Hit"
-            percent = 100
+    #     if(player_value <= 11):
+    #         decision = "Hit"
+    #         percent = 100
 
     # move predict/image0.jpg to IMG_2306.jpg
 
+    directory = 'runs/detect'
+    files = os.listdir(directory)
+    shutil.rmtree(r"runs")
 
-    img = Image.open("runs/detect/predict/"+image)
+    img = Image.open(image)
     font = ImageFont.truetype("OpenSans-Semibold.ttf", 60)
     font2 = ImageFont.truetype("OpenSans-Semibold.ttf", 30)
     draw = ImageDraw.Draw(img)
     draw.text((10, 0), "Dealer Value: " + str(dealer_value), font=font2, fill=(0, 255, 255))
     draw.text((10, 270), "Player Value: " + str(player_value), font=font2, fill=(0, 255, 255))
+    decision = decision.capitalize()
     if(decision == "Hit"):
         draw.text((10, 530), decision + " (" + str(percent) + "%)", font=font, fill=(255, 0, 0))
     else:
@@ -156,7 +182,6 @@ def predict(image):
     clone.save("predicted.jpg")
     img.close()
 
-    shutil.rmtree(r"runs")
     return clone
 
 
