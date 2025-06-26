@@ -1,0 +1,41 @@
+title: BlackJack AI
+description: Computer Vision-Powered Blackjack Strategy Advisor
+baseurl: "/BlackJack-AI"
+url: "https://username.github.io"
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Navigation
+nav_links:
+  - name: "Home"
+    link: "/"
+  - name: "Features"
+    link: "#features"
+  - name: "How It Works"
+    link: "#how-it-works"
+  - name: "Technology"
+    link: "#technology"
+  - name: "Installation"
+    link: "#installation"
+
+# Exclude from processing
+exclude:
+  - main.py
+  - requirements.txt
+  - Dockerfile
+  - Procfile
+  - heroku.yml
+  - vercel.json
+  - commands.txt
+  - model.pt
+  - strategy.csv
+  - OpenSans-SemiBold.ttf
+  - templates/
+  - images/
+  - __pycache__/
+  - .git/
+  - .github/
