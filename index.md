@@ -1,339 +1,240 @@
 ---
 layout: home
-title: BlackJack AI - Computer Vision-Powered Strategy Advisor
+title: "BlackJack AI Project"
+heading: "BlackJack AI"
+subheading: "Computer Vision-Powered Blackjack Strategy Advisor using YOLO object detection"
 ---
 
-# BlackJack AI
-
-### Computer Vision-Powered Blackjack Strategy Advisor
-
-<div class="text-center mb-12">
-  <img src="{{ '/assets/img/blackjack-ai-demo.gif' | relative_url }}" alt="BlackJack AI Demo" class="mx-auto rounded-lg shadow-2xl border border-nord-3 max-w-4xl w-full">
-</div>
-
-## About
-
-BlackJack AI is an intelligent web application that combines **computer vision** and **optimal blackjack strategy** to provide real-time decision-making assistance. Simply upload an image of your blackjack hand, and the AI will analyze the cards using YOLO object detection, calculate hand values, and recommend the statistically optimal move based on professional blackjack strategy.
-
----
-
-## Features {#features}
-
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-  <div class="bg-nord-1 p-6 rounded-lg border border-nord-3">
-    <h3 class="text-blackjack-green text-xl font-bold mb-3">🎯 Real-time Card Detection</h3>
-    <p class="text-nord-4">Advanced YOLO object detection identifies playing cards in uploaded images with high accuracy</p>
-  </div>
-  
-  <div class="bg-nord-1 p-6 rounded-lg border border-nord-3">
-    <h3 class="text-blackjack-green text-xl font-bold mb-3">🧠 Optimal Strategy Engine</h3>
-    <p class="text-nord-4">Implements mathematically proven blackjack basic strategy for maximum winning probability</p>
-  </div>
-  
-  <div class="bg-nord-1 p-6 rounded-lg border border-nord-3">
-    <h3 class="text-blackjack-green text-xl font-bold mb-3">💻 Web-based Interface</h3>
-    <p class="text-nord-4">Clean, responsive Flask web application with intuitive drag-and-drop image upload</p>
-  </div>
-  
-  <div class="bg-nord-1 p-6 rounded-lg border border-nord-3">
-    <h3 class="text-blackjack-green text-xl font-bold mb-3">📊 Visual Feedback</h3>
-    <p class="text-nord-4">Annotated images showing detected cards, hand values, and strategy recommendations</p>
-  </div>
-  
-  <div class="bg-nord-1 p-6 rounded-lg border border-nord-3">
-    <h3 class="text-blackjack-green text-xl font-bold mb-3">⚡ Fast Processing</h3>
-    <p class="text-nord-4">Optimized YOLO model provides near-instant card recognition and strategy calculation</p>
-  </div>
-  
-  <div class="bg-nord-1 p-6 rounded-lg border border-nord-3">
-    <h3 class="text-blackjack-green text-xl font-bold mb-3">🎨 Modern UI/UX</h3>
-    <p class="text-nord-4">Dark theme with matrix-style animations creating an engaging user experience</p>
-  </div>
-</div>
-
----
-
-## How It Works {#how-it-works}
-
-<div class="bg-nord-1 p-8 rounded-lg border border-nord-3 mb-8">
-  <div class="grid md:grid-cols-2 gap-8 items-center">
-    <div>
-      <h3 class="text-2xl font-bold text-blackjack-green mb-4">1. Upload Your Hand</h3>
-      <p class="text-nord-4 mb-4">Take a photo of your blackjack table or upload an existing image. The application accepts various image formats and automatically resizes for optimal processing.</p>
-      
-      <h3 class="text-2xl font-bold text-blackjack-green mb-4">2. AI Card Detection</h3>
-      <p class="text-nord-4 mb-4">Our trained YOLO model detects and identifies all visible playing cards, distinguishing between dealer and player hands based on position.</p>
-      
-      <h3 class="text-2xl font-bold text-blackjack-green mb-4">3. Strategy Calculation</h3>
-      <p class="text-nord-4">The system calculates hand values, considers soft/hard aces, and references the optimal basic strategy table to provide the best statistical move.</p>
+<div class="space-y-12">
+    <!-- Main Featured Image - Smaller and Centered -->
+    <div class="flex justify-center">
+        <img class="object-cover object-top w-full max-w-md h-auto rounded-lg shadow-lg" 
+             src="{{ site.baseurl }}/assets/img/blackjack-ai-demo.gif" 
+             alt="BlackJack AI Demo - Card Detection and Strategy">
     </div>
-    <div class="text-center">
-      <img src="{{ '/assets/img/card-detection-example.png' | relative_url }}" alt="Card Detection Example" class="rounded-lg shadow-lg border border-nord-3 w-full max-w-md">
+
+    <div class="space-y-6">
+        <div class="space-y-4">
+            <h3 class="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl dark:text-white">
+                Computer Vision-Powered Blackjack Strategy
+            </h3>
+
+            <p class="text-base font-normal text-gray-500 sm:text-lg dark:text-gray-400">
+                BlackJack AI is an intelligent web application that combines <strong>computer vision</strong> and <strong>optimal blackjack strategy</strong> to provide real-time decision-making assistance. Simply upload an image of your blackjack hand, and the AI will analyze the cards using YOLO object detection, calculate hand values, and recommend the statistically optimal move based on professional blackjack strategy.
+            </p>
+            <p class="text-base font-normal text-gray-500 sm:text-lg dark:text-gray-400">
+                The system uses a trained <a href="https://ultralytics.com/yolo" target="_blank" class="text-primary-600 hover:text-primary-700 dark:text-primary-500">YOLO model</a> to detect and identify all 52 playing cards, implements mathematically proven basic strategy, and provides instant recommendations with confidence percentages through a modern Flask web interface.
+            </p>
+        </div>
+
+        <!-- Technology Tags -->
+        <div class="flex items-center gap-2.5 flex-wrap">
+            <div class="p-1 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+                <span class="inline-flex items-center px-3 py-1 text-xs font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
+                    YOLO Object Detection
+                </span>
+            </div>
+            <div class="p-1 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+                <span class="inline-flex items-center px-3 py-1 text-xs font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
+                    Flask
+                </span>
+            </div>
+            <div class="p-1 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+                <span class="inline-flex items-center px-3 py-1 text-xs font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
+                    Computer Vision
+                </span>
+            </div>
+            <div class="p-1 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+                <span class="inline-flex items-center px-3 py-1 text-xs font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
+                    Machine Learning
+                </span>
+            </div>
+            <div class="p-1 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+                <span class="inline-flex items-center px-3 py-1 text-xs font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
+                    Basic Strategy
+                </span>
+            </div>
+            <div class="p-1 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
+                <span class="inline-flex items-center px-3 py-1 text-xs font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
+                    Tailwind CSS
+                </span>
+            </div>
+        </div>
+
+        <!-- How It Works Section -->
+        <div class="mt-8">
+            <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">How It Works</h4>
+            <p class="text-base text-gray-500 dark:text-gray-400 mb-8">
+                Upload an image of your blackjack table and get instant strategy recommendations:
+            </p>
+
+            <!-- Process Steps Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Upload Step -->
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6">
+                    <h5 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">1. Upload Your Hand</h5>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Take a photo of your blackjack table or upload an existing image. The application accepts various image formats and automatically resizes for optimal processing.</p>
+                    <img class="w-full h-auto rounded border border-gray-200 dark:border-gray-700"
+                         src="{{ site.baseurl }}/assets/img/card-detection-example.png" alt="Card Detection Input">
+                </div>
+
+                <!-- AI Detection Step -->
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6">
+                    <h5 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">2. AI Card Detection</h5>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Our trained YOLO model detects and identifies all visible playing cards, distinguishing between dealer and player hands based on position.</p>
+                    <img class="w-full h-auto rounded border border-gray-200 dark:border-gray-700"
+                         src="{{ site.baseurl }}/assets/img/strategy-recommendation.jpg" alt="Strategy Output">
+                </div>
+
+                <!-- Strategy Calculation -->
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6 md:col-span-2">
+                    <h5 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">3. Strategy Calculation</h5>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">The system calculates hand values, considers soft/hard aces, and references the optimal basic strategy table to provide the best statistical move with confidence percentage.</p>
+
+                    <!-- Strategy Recommendations -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg text-center border border-gray-200 dark:border-gray-600">
+                            <div class="text-2xl mb-2">✊</div>
+                            <h6 class="font-bold text-gray-900 dark:text-white">Stand</h6>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">Keep current hand</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg text-center border border-gray-200 dark:border-gray-600">
+                            <div class="text-2xl mb-2">👆</div>
+                            <h6 class="font-bold text-gray-900 dark:text-white">Hit</h6>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">Take another card</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg text-center border border-gray-200 dark:border-gray-600">
+                            <div class="text-2xl mb-2">⏫</div>
+                            <h6 class="font-bold text-gray-900 dark:text-white">Double</h6>
+                            <p class="text-xs text-gray-600 dark:text-gray-400">Double bet, one card</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Features Section -->
+        <div class="mt-8">
+            <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Key Features</h4>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6">
+                    <div class="text-2xl mb-3">🎯</div>
+                    <h5 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Real-time Card Detection</h5>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Advanced YOLO object detection identifies playing cards in uploaded images with high accuracy across all 52 cards.</p>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6">
+                    <div class="text-2xl mb-3">🧠</div>
+                    <h5 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Optimal Strategy Engine</h5>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Implements mathematically proven blackjack basic strategy for maximum winning probability.</p>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6">
+                    <div class="text-2xl mb-3">💻</div>
+                    <h5 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Web-based Interface</h5>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Clean, responsive Flask web application with intuitive drag-and-drop image upload.</p>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6">
+                    <div class="text-2xl mb-3">📊</div>
+                    <h5 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Visual Feedback</h5>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Annotated images showing detected cards, hand values, and strategy recommendations.</p>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6">
+                    <div class="text-2xl mb-3">⚡</div>
+                    <h5 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Fast Processing</h5>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Optimized YOLO model provides near-instant card recognition and strategy calculation.</p>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6">
+                    <div class="text-2xl mb-3">🎨</div>
+                    <h5 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Modern UI/UX</h5>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Dark theme with matrix-style animations creating an engaging user experience.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Implementation -->
+        <div class="mt-8">
+            <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Technical Implementation</h4>
+
+            <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h5 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">🤖 Machine Learning Stack</h5>
+                        <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                            <li>• <strong>YOLO (You Only Look Once):</strong> Real-time object detection</li>
+                            <li>• <strong>Ultralytics:</strong> Modern YOLO implementation</li>
+                            <li>• <strong>Custom Training:</strong> 52-card deck recognition</li>
+                            <li>• <strong>PIL/Pillow:</strong> Image manipulation and annotation</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">🌐 Web Framework</h5>
+                        <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                            <li>• <strong>Flask:</strong> Lightweight Python web framework</li>
+                            <li>• <strong>JavaScript/jQuery:</strong> Interactive frontend</li>
+                            <li>• <strong>Tailwind CSS:</strong> Modern responsive styling</li>
+                            <li>• <strong>Base64 Encoding:</strong> Web-optimized image transfer</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Installation Section -->
+        <div class="mt-8">
+            <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Quick Start</h4>
+
+            <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6">
+                <div class="space-y-4">
+                    <div>
+                        <h5 class="font-bold text-gray-900 dark:text-white mb-2">1. Clone the Repository</h5>
+                        <div class="bg-gray-800 text-gray-100 p-3 rounded font-mono text-sm">
+                            git clone https://github.com/nitheesh-cpu/BlackJack-AI.git<br>
+                            cd BlackJack-AI
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-gray-900 dark:text-white mb-2">2. Install Dependencies</h5>
+                        <div class="bg-gray-800 text-gray-100 p-3 rounded font-mono text-sm">
+                            pip install -r requirements.txt
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-gray-900 dark:text-white mb-2">3. Run the Application</h5>
+                        <div class="bg-gray-800 text-gray-100 p-3 rounded font-mono text-sm">
+                            python main.py
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold text-gray-900 dark:text-white mb-2">4. Access the Web Interface</h5>
+                        <div class="bg-gray-800 text-gray-100 p-3 rounded font-mono text-sm">
+                            Open browser to: http://localhost:5000
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GitHub Button -->
+        <div class="mt-8">
+            <a href="https://github.com/nitheesh-cpu/BlackJack-AI" target="_blank" title="View on GitHub"
+                class="text-white inline-flex items-center bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                role="button">
+                View Source Code
+                <svg aria-hidden="true" class="w-5 h-5 ml-2" fill="none" stroke="currentColor"
+                    stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3">
+                    </path>
+                </svg>
+            </a>
+        </div>
     </div>
-  </div>
-</div>
 
-### Strategy Recommendations
-
-<div class="grid md:grid-cols-3 gap-6 mb-8">
-  <div class="bg-nord-2 p-6 rounded-lg text-center">
-    <div class="text-3xl mb-2">✊</div>
-    <h4 class="text-xl font-bold text-nord-6 mb-2">Stand</h4>
-    <p class="text-nord-4 text-sm">Keep your current hand - optimal when risk of busting is too high</p>
-  </div>
-  
-  <div class="bg-nord-2 p-6 rounded-lg text-center">
-    <div class="text-3xl mb-2">👆</div>
-    <h4 class="text-xl font-bold text-nord-6 mb-2">Hit</h4>
-    <p class="text-nord-4 text-sm">Take another card - when probability favors improving your hand</p>
-  </div>
-  
-  <div class="bg-nord-2 p-6 rounded-lg text-center">
-    <div class="text-3xl mb-2">⏫</div>
-    <h4 class="text-xl font-bold text-nord-6 mb-2">Double</h4>
-    <p class="text-nord-4 text-sm">Double your bet and take exactly one more card - maximum advantage scenarios</p>
-  </div>
-</div>
-
-### Example Output
-
-<div class="text-center mb-8">
-  <img src="{{ '/assets/img/strategy-recommendation.jpg' | relative_url }}" alt="Strategy Recommendation Output" class="mx-auto rounded-lg shadow-lg border border-nord-3 max-w-2xl w-full">
-  <p class="text-nord-4 text-sm mt-4">Example output showing detected cards, calculated values, and optimal strategy recommendation</p>
-</div>
-
----
-
-## Technology Stack {#technology}
-
-<div class="grid md:grid-cols-2 gap-8 mb-8">
-  <div class="bg-nord-1 p-6 rounded-lg border border-nord-3">
-    <h3 class="text-xl font-bold text-blackjack-green mb-4">🤖 Machine Learning</h3>
-    <div class="space-y-2 text-nord-4">
-      <div class="flex items-center space-x-2">
-        <span class="w-2 h-2 bg-blackjack-green rounded-full"></span>
-        <span><strong>YOLO (You Only Look Once):</strong> Real-time object detection</span>
-      </div>
-      <div class="flex items-center space-x-2">
-        <span class="w-2 h-2 bg-blackjack-green rounded-full"></span>
-        <span><strong>Ultralytics:</strong> Modern YOLO implementation</span>
-      </div>
-      <div class="flex items-center space-x-2">
-        <span class="w-2 h-2 bg-blackjack-green rounded-full"></span>
-        <span><strong>Custom Training:</strong> 52-card deck recognition</span>
-      </div>
-    </div>
-  </div>
-  
-  <div class="bg-nord-1 p-6 rounded-lg border border-nord-3">
-    <h3 class="text-xl font-bold text-blackjack-green mb-4">🌐 Web Framework</h3>
-    <div class="space-y-2 text-nord-4">
-      <div class="flex items-center space-x-2">
-        <span class="w-2 h-2 bg-blackjack-green rounded-full"></span>
-        <span><strong>Flask:</strong> Lightweight Python web framework</span>
-      </div>
-      <div class="flex items-center space-x-2">
-        <span class="w-2 h-2 bg-blackjack-green rounded-full"></span>
-        <span><strong>JavaScript/jQuery:</strong> Interactive frontend</span>
-      </div>
-      <div class="flex items-center space-x-2">
-        <span class="w-2 h-2 bg-blackjack-green rounded-full"></span>
-        <span><strong>Tailwind CSS:</strong> Modern responsive styling</span>
-      </div>
-    </div>
-  </div>
-  
-  <div class="bg-nord-1 p-6 rounded-lg border border-nord-3">
-    <h3 class="text-xl font-bold text-blackjack-green mb-4">🖼️ Image Processing</h3>
-    <div class="space-y-2 text-nord-4">
-      <div class="flex items-center space-x-2">
-        <span class="w-2 h-2 bg-blackjack-green rounded-full"></span>
-        <span><strong>PIL (Pillow):</strong> Image manipulation and annotation</span>
-      </div>
-      <div class="flex items-center space-x-2">
-        <span class="w-2 h-2 bg-blackjack-green rounded-full"></span>
-        <span><strong>OpenCV:</strong> Computer vision operations</span>
-      </div>
-      <div class="flex items-center space-x-2">
-        <span class="w-2 h-2 bg-blackjack-green rounded-full"></span>
-        <span><strong>Base64 Encoding:</strong> Web-optimized image transfer</span>
-      </div>
-    </div>
-  </div>
-  
-  <div class="bg-nord-1 p-6 rounded-lg border border-nord-3">
-    <h3 class="text-xl font-bold text-blackjack-green mb-4">📈 Strategy Engine</h3>
-    <div class="space-y-2 text-nord-4">
-      <div class="flex items-center space-x-2">
-        <span class="w-2 h-2 bg-blackjack-green rounded-full"></span>
-        <span><strong>CSV Database:</strong> Comprehensive strategy lookup table</span>
-      </div>
-      <div class="flex items-center space-x-2">
-        <span class="w-2 h-2 bg-blackjack-green rounded-full"></span>
-        <span><strong>Basic Strategy:</strong> Mathematically optimal decisions</span>
-      </div>
-      <div class="flex items-center space-x-2">
-        <span class="w-2 h-2 bg-blackjack-green rounded-full"></span>
-        <span><strong>Soft/Hard Ace Logic:</strong> Advanced hand evaluation</span>
-      </div>
-    </div>
-  </div>
-</div>
-
----
-
-## Key Features Breakdown
-
-<div class="space-y-6 mb-8">
-  <div class="bg-nord-1 p-6 rounded-lg border border-nord-3">
-    <h3 class="text-xl font-bold text-blackjack-green mb-3">🎯 Card Recognition Accuracy</h3>
-    <p class="text-nord-4 mb-3">The YOLO model is trained to recognize all 52 playing cards with suit and rank detection:</p>
-    <div class="bg-nord-2 p-4 rounded font-mono text-sm">
-      <div class="grid grid-cols-4 gap-2 text-center">
-        <div class="text-red-400">♥ Hearts: A, 2-10, J, Q, K</div>
-        <div class="text-red-400">♦ Diamonds: A, 2-10, J, Q, K</div>
-        <div class="text-nord-6">♠ Spades: A, 2-10, J, Q, K</div>
-        <div class="text-nord-6">♣ Clubs: A, 2-10, J, Q, K</div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="bg-nord-1 p-6 rounded-lg border border-nord-3">
-    <h3 class="text-xl font-bold text-blackjack-green mb-3">📊 Strategy Database</h3>
-    <p class="text-nord-4 mb-3">Comprehensive lookup table covering all possible game scenarios:</p>
-    <ul class="list-disc list-inside text-nord-4 space-y-1">
-      <li>Hard hands (no ace or ace counted as 1)</li>
-      <li>Soft hands (ace counted as 11)</li>
-      <li>All dealer up-cards (2-11)</li>
-      <li>Split recommendations for pairs</li>
-      <li>Double down opportunities</li>
-    </ul>
-  </div>
-</div>
-
----
-
-## Installation & Setup {#installation}
-
-<div class="bg-nord-1 p-6 rounded-lg border border-nord-3 mb-8">
-  <h3 class="text-xl font-bold text-blackjack-green mb-4">🚀 Quick Start</h3>
-  
-  <div class="space-y-4">
-    <div>
-      <h4 class="font-bold text-nord-6 mb-2">1. Clone the Repository</h4>
-      <div class="bg-nord-2 p-3 rounded font-mono text-sm">
-        <span class="text-blackjack-green">git clone</span> <span class="text-nord-4">https://github.com/username/BlackJack-AI.git</span><br>
-        <span class="text-blackjack-green">cd</span> <span class="text-nord-4">BlackJack-AI</span>
-      </div>
-    </div>
-    
-    <div>
-      <h4 class="font-bold text-nord-6 mb-2">2. Install Dependencies</h4>
-      <div class="bg-nord-2 p-3 rounded font-mono text-sm">
-        <span class="text-blackjack-green">pip install</span> <span class="text-nord-4">-r requirements.txt</span>
-      </div>
-    </div>
-    
-    <div>
-      <h4 class="font-bold text-nord-6 mb-2">3. Run the Application</h4>
-      <div class="bg-nord-2 p-3 rounded font-mono text-sm">
-        <span class="text-blackjack-green">python</span> <span class="text-nord-4">main.py</span>
-      </div>
-    </div>
-    
-    <div>
-      <h4 class="font-bold text-nord-6 mb-2">4. Access the Web Interface</h4>
-      <div class="bg-nord-2 p-3 rounded font-mono text-sm">
-        <span class="text-nord-4">Open browser to: </span><span class="text-blackjack-green">http://localhost:5000</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-### Requirements
-
-<div class="grid md:grid-cols-2 gap-6 mb-8">
-  <div class="bg-nord-1 p-6 rounded-lg border border-nord-3">
-    <h4 class="font-bold text-blackjack-green mb-3">📦 Python Dependencies</h4>
-    <ul class="text-nord-4 space-y-1 font-mono text-sm">
-      <li>• Flask - Web framework</li>
-      <li>• ultralytics - YOLO implementation</li>
-      <li>• Pillow - Image processing</li>
-      <li>• opencv-python-headless - Computer vision</li>
-      <li>• psutil - System monitoring</li>
-      <li>• py4web - Additional web utilities</li>
-    </ul>
-  </div>
-  
-  <div class="bg-nord-1 p-6 rounded-lg border border-nord-3">
-    <h4 class="font-bold text-blackjack-green mb-3">💻 System Requirements</h4>
-    <ul class="text-nord-4 space-y-1">
-      <li>• Python 3.8 or higher</li>
-      <li>• 4GB RAM minimum</li>
-      <li>• 500MB disk space</li>
-      <li>• GPU optional (CPU inference supported)</li>
-      <li>• Modern web browser</li>
-    </ul>
-  </div>
-</div>
-
----
-
-## Usage Examples
-
-<div class="bg-nord-1 p-6 rounded-lg border border-nord-3 mb-8">
-  <h3 class="text-xl font-bold text-blackjack-green mb-4">📸 Best Practices for Card Images</h3>
-  <div class="grid md:grid-cols-2 gap-6">
-    <div>
-      <h4 class="font-bold text-nord-6 mb-2">✅ Good Images:</h4>
-      <ul class="text-nord-4 space-y-1">
-        <li>• Clear lighting, minimal shadows</li>
-        <li>• Cards fully visible and unobstructed</li>
-        <li>• Dealer hand in upper half of image</li>
-        <li>• Player hand in lower half of image</li>
-        <li>• Stable camera angle</li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="font-bold text-nord-6 mb-2">❌ Avoid:</h4>
-      <ul class="text-nord-4 space-y-1">
-        <li>• Blurry or out-of-focus cards</li>
-        <li>• Overlapping or obscured cards</li>
-        <li>• Poor lighting conditions</li>
-        <li>• Extreme angles or perspective</li>
-        <li>• Reflective surfaces causing glare</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
----
-
-## Deployment Options
-
-<div class="grid md:grid-cols-3 gap-6 mb-8">
-  <div class="bg-nord-1 p-6 rounded-lg border border-nord-3 text-center">
-    <h4 class="font-bold text-blackjack-green mb-3">🐳 Docker</h4>
-    <p class="text-nord-4 text-sm">Containerized deployment with included Dockerfile for easy scaling</p>
-  </div>
-  
-  <div class="bg-nord-1 p-6 rounded-lg border border-nord-3 text-center">
-    <h4 class="font-bold text-blackjack-green mb-3">🚀 Heroku</h4>
-    <p class="text-nord-4 text-sm">Cloud deployment ready with Procfile and heroku.yml configuration</p>
-  </div>
-  
-  <div class="bg-nord-1 p-6 rounded-lg border border-nord-3 text-center">
-    <h4 class="font-bold text-blackjack-green mb-3">⚡ Vercel</h4>
-    <p class="text-nord-4 text-sm">Serverless deployment option with included vercel.json configuration</p>
-  </div>
-</div>
-
----
-
-<div class="text-center bg-nord-1 p-8 rounded-lg border border-nord-3">
-  <h2 class="text-2xl font-bold text-blackjack-green mb-4">Ready to Improve Your Blackjack Game?</h2>
-  <p class="text-nord-4 mb-6">Upload an image of your blackjack hand and let AI guide your strategy decisions</p>
-  <a href="#" class="inline-block bg-blackjack-green text-nord-0 px-8 py-3 rounded-lg font-bold hover:bg-nord-7 transition-colors">
-    Try BlackJack AI Now
-  </a>
 </div>

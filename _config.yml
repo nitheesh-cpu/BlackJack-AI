@@ -1,26 +1,30 @@
-title: BlackJack AI
-description: Computer Vision-Powered Blackjack Strategy Advisor
-baseurl: "/BlackJack-AI"
-url: "https://username.github.io"
+title: "Nitheesh"
+description: "BlackJack AI - Computer Vision-Powered Blackjack Strategy Advisor"
+url: "https://nitheesh-cpu.github.io/"
+baseurl: "/BlackJack-AI/"
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 plugins:
   - jekyll-feed
-  - jekyll-sitemap
 
-# Navigation
-nav_links:
+# Navigation - Links back to main portfolio site
+navigation:
   - name: "Home"
-    link: "/"
-  - name: "Features"
-    link: "#features"
-  - name: "How It Works"
-    link: "#how-it-works"
-  - name: "Technology"
-    link: "#technology"
-  - name: "Installation"
-    link: "#installation"
+    link: "https://nitheesh-cpu.github.io/"
+  - name: "Projects"
+    link: "https://nitheesh-cpu.github.io/projects.html"
+  - name: "Resume"
+    link: "https://nitheesh-cpu.github.io/resume.html"
+  - name: "Contact"
+    link: "https://nitheesh-cpu.github.io/contact.html"
+
+# Social links
+social:
+  github: "https://github.com/nitheesh-cpu"
+  linkedin: "https://www.linkedin.com/in/nitheesh-kodarapu-7529b1272"
+  instagram: "https://www.instagram.com/nitheeesh_/"
 
 # Exclude from processing
 exclude:
@@ -39,3 +43,5 @@ exclude:
   - __pycache__/
   - .git/
   - .github/
+# Remove theme since we're using custom layouts
+# theme: jekyll-theme-midnight
